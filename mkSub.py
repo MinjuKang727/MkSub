@@ -1,3 +1,4 @@
+# C:/Users/minju/Programming/Small_Project/MkSub
 # 필요 라이브러리: ffmpeg, yt-dlp, moviepy, pygame
 import json
 import xml.etree.ElementTree as ET
@@ -962,7 +963,8 @@ def create_window():
             tabs = get_tk_dict("tab")
             
             for widgets in tabs:
-                tab, label1, btn_edit_sub, label2_tuple, listbox_tuple, scrollbar = widgets
+                # tab, label1, btn_edit_sub, label2_tuple, listbox_tuple, scrollbar = widgets
+                tab, label1, label2_tuple, listbox_tuple, scrollbar = widgets
 
                 for i, width in enumerate([5, 10, 10, max_sub_len]):
                     listbox_tuple[i].config(height=25,width=width)
