@@ -6,3 +6,6 @@ venv/
 .log
 
 .temp
+
+# download 폴더 무시
+download/
