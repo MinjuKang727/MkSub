@@ -194,12 +194,6 @@ class TkDict(): # tkinter 위젯 딕셔너리 클래스
     @classmethod
     def initialize(cls):  # tkinter 딕셔너리 초기화
         cls.tk_dict = dict()
-
-    # @classmethod
-    # def reset(cls):
-    #     destroy_notebook()
-    #     create_tk_widgets(TkKey.NOTEBOOK)
-    #     show_tk_widgets(TkKey.NOTEBOOK)
         
     @classmethod
     def pop(cls, key):  # tkinter 딕셔너리에서 해당 키(TkKey)의 값 삭제
@@ -298,12 +292,14 @@ class PathDict():  # 경로 딕셔너리 클래스
         cls.path_dict = dict()
         # 현재 파일이 위치한 디렉토리 경로 (절대 경로)
         root_path = Path(__file__).parent.absolute()
+        save_path = Path(root_path) / "download"
+        save_path.mkdir(parents=True, exist_ok=True)
         font_path = Path(root_path) / "font/GothicA1-Black.ttf"
         folder_icon_path = Path(root_path) / "images/folder_icon.png"
         audio_icon_path = Path(root_path) / "images/audio_icon.png"
         sub_icon_path = Path(root_path) / "images/sub_icon.png"
         cls.set(PathKey.ROOT, root_path)
-        cls.set(PathKey.SAVE, root_path)
+        cls.set(PathKey.SAVE, save_path)
         cls.set(PathKey.FONT, font_path)
         cls.set(PathKey.FOLDER_ICON, folder_icon_path)
         cls.set(PathKey.AUDIO_ICON, audio_icon_path)
