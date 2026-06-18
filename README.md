@@ -9,7 +9,8 @@
     - 노래방 자막: 노래에 맞춰서 한글자씩 자막을 띄웁니다.
 
 ## 개발 현황
-**2026.06.11** : mkSub.py 개발 내용
+### 2026.06.11
+> mkSub.py 개발 내용
 
 <div style="display:flex; flex-direction: row; margin-top:10px;">
 <img src="images/20260611개발진척도.png" alt="개발 GUI 사진" width="400" height="500">
@@ -34,13 +35,38 @@
     - 리스트 박스 원소 선택: 한 리스트 박스의 원소를 선택할 시, 다른 리스트 박스의 같은 인덱스 원소도 선택됨
     - 스크롤 연동 with 스크롤바: 네 개의 리스트 박스, 스크롤 바가 동시에 움직이도록 함.
 
----
-### 이후 개발 계획
+
+#### 이후 개발 계획
 - 자막 편집 버튼 생성
 - 자막 편집 알고리즘 개발
 </div>
 </div>
-    
+---
+
+### 2026.06.11
+> 자막 가져오는 방법 선택 및 동작 알고리즘
+
+**자막 가져오는 방법**
+- 유튜브 링크로 가져오기
+- 저장 경로에서 찾기(자동)
+- 직접 경로 지정(수동)
+
+
+### 2026.06.18
+
+#### Enum 클래스 및 딕셔너리 클래스 정의
+> 경로, tkinter, 자막 정보를 딕셔너리에 저장 -> 클래스로 만들어서 static 변수로 딕셔너리 사용 및 관련 메서드 사용
+> 계속 사용되는 문자열 키를 Enum 클래스로 정의하여 관리
+
+- 딕셔너리 초기화 위치
+    - create_window(): 실행창 생성
+        - initDictNLog(log_level=LogLevel.INFO)
+            - TkDict.initialize() : tkinter 객체 관리 딕셔너리 초기화
+            - PathDict.initialize() : 경로 딕셔너리 초기화
+            - Log.initialize(log_level) : 로그 객체 초기화(매개 변수로 로그 레벨 설정 가능)
+    - play_mkSub(): '실행' 버튼 클릭 시, 실행
+        - SubDict.initialize() : 자막 관련 딕셔너리 초기화
+        - PathDict.reset() : 경로 객체 초기화
 
 
 
